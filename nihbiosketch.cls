@@ -1,4 +1,4 @@
-%% nihbiosketch.cls 
+%% nihbiosketch.cls
 %% Copyright 2015 Paul M. Magwene
 %
 % This work may be distributed and/or modified under the
@@ -10,7 +10,7 @@
 % version 008/05/04 or later.
 %
 % This work has the LPPL maintenance status `maintained'.
-% 
+%
 % The Current Maintainer of this work is Paul M. Magwene
 %
 % This work consists of the files nihbiosketch.cls
@@ -98,11 +98,26 @@ EDUCATION/TRAINING (\textit{Begin with baccalaureate or other initial profession
 \begin{tabu} to \textwidth {X[3.73,l,m]|X[1,c,m]|X[1,c,m]|X[1.8,l,m]}
 \hline
 \rowfont[c]{}               % for the header only we want all the text centered
-INSTITUTION AND LOCATION & 
-DEGREE \newline (\textit{if applicable}) & 
-Completion Date MM/YYYY & 
+INSTITUTION AND LOCATION &
+DEGREE \newline (\textit{if applicable}) &
+Completion Date MM/YYYY &
 FIELD OF STUDY\\
 \hline}
+{\end{tabu}\egroup}
+
+% TODO check if below works
+\newenvironment{transcript}
+{
+\bgroup\centering
+\tabulinesep=1.5mm
+\begin{tabu} to \textwidth {X[1,c,m]|X[3.73,l,m]|X[1,c,m]}
+\hline
+\rowfont[c]{}
+YEAR & COURSE TITLE & GRADE\\
+\hline
+\end{tabu}
+\begin{tabu}{X[1,c,m]X[3.73,l,m]X[1,c,m]}
+}
 {\end{tabu}\egroup}
 
 \newenvironment{datetbl}
@@ -116,7 +131,7 @@ FIELD OF STUDY\\
 
 
 %------------------------------------------------------------------------------
-% setup document geometry    
+% setup document geometry
 
 % turn off page numbering
 \pagenumbering{gobble}
@@ -129,4 +144,3 @@ FIELD OF STUDY\\
 %------------------------------------------------------------------------------
 
 \AfterEndPreamble{\piinfo}
-
