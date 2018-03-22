@@ -105,7 +105,6 @@ FIELD OF STUDY\\
 \hline}
 {\end{tabu}\egroup}
 
-% TODO check if below works
 \newenvironment{transcript}
 {
 \bgroup\centering
